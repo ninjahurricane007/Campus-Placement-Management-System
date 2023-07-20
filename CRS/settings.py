@@ -150,5 +150,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # SMTP account settings
-EMAIL_HOST_USER = 'placementcellasiet@outlook.com'
-EMAIL_HOST_PASSWORD = 'placement1234'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
