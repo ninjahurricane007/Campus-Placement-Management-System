@@ -1,0 +1,101 @@
+.regpage_main_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.regpage_main_container h1{
+    font-weight: 400;
+    border-bottom: 1px solid rgb(171, 171, 171);
+    width: 60%;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+.drive_desc{
+    display: flex;
+    gap: 50px;
+}
+.drive_desc .drive_rhs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    align-items: center;
+}
+.drive_desc .drive_details{
+    display: flex;
+    flex-direction: column;
+}
+.drive_desc .drive_img img{
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: block;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.drive_rhs .register_btn{
+width: 100%;
+}
+.drive_rhs .register_btn button{
+    display: block;
+    width: 100%;
+    padding: 6px 5px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #F03737;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 80ms ease-in;
+}
+.drive_rhs .register_btn button:active{
+    transform: scale(0.95);
+}
+.tags{
+    margin: 20px 0;
+}
+.tags .tag{
+    background-color: aquamarine;
+    padding: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+.price{
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.teamsize{
+    font-size: 15px;
+    margin: 8px 0;
+}
+.prizepool{
+    font-size: 15px;
+    margin: 8px 0;
+}
+@media(max-width:880px){
+    .drive_desc{
+        flex-direction: column;
+    }
+    .regpage_main_container{
+        padding: 20px;
+        margin-top: 80px;
+    }
+    .drive_desc .drive_rhs{
+        justify-content: center;
+    }
+    .drive_desc .drive_img img{
+        max-width: 400px;
+    }
+  }

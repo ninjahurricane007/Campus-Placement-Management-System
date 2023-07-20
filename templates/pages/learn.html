@@ -1,0 +1,81 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/learn.css">
+{% endblock head %}
+{% block body %}
+<div class="fests_container">
+    <h1 class="card__header fest__header">Learning Materials</h1>
+    <br><hr><br><br><br><br>
+    
+<!-- <div class="sidebar-content">  
+    <a href="/fests" onclick="handleSidebar()" class="side-menu festclass">
+    <div class="side-menu-item">
+    <i class="fas fa-home" aria-hidden="true"></i>
+    <p>Drives</p>
+    </div> </a>
+    <a href="/getyourdrives" onclick="handleSidebar()" class="side-menu regdriveclass"> <div class="side-menu-item">
+    <i class="far fa-calendar-check" aria-hidden="true">
+    </i>
+    <p>Registered Drives</p>
+    </div>
+    </a>
+    <a href="/profile" onclick="handleSidebar()" class="side-menu profileclass">
+    <div class="side-menu-item">
+    <i class="far fa-calendar-check" aria-hidden="true">
+    </i>
+    <p>Profile</p>
+    </div>
+    </a>
+    </div>
+    </div> -->
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="https://tse1.mm.bing.net/th?id=OIP.i15mScrigsgWGtdasGrUWQHaB3&pid=Api&P=0" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">Aptitude Test</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Want to sharpen your aptitude abilities? Explore our range of questions and boost your confidence.!</p>
+                    <a href="/test" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="http://www.siltek.net/images/group%20discussion%20banner%20image.jpg" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">Group Discussion Topics</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Ready to have your voice heard? Participate in group discussions and be part of the conversation!</p>
+                    <a href="/gd" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="https://tse4.mm.bing.net/th?id=OIP.-7iOOlQJbf3KVN56yf5hjwHaDB&pid=Api&P=0" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">Coding Questions</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Sharpen your skills with our coding challenges</p>
+                    <a href="/coding" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="footer-text">© 2023 Campus Recruitment System. All rights reserved</p>
+</div>
+</body>
+</html>
+{% endblock body %}

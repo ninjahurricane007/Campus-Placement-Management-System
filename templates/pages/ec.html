@@ -1,0 +1,41 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+ASIET
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/coordinator.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock head %}
+{% block body %}
+<br><br><br>
+<h1 style="text-align:center">Placed Student Details</h1>
+    <br>
+    {% comment %} {% if imported_data %} {% endcomment %}
+    <table class="tbl" align="center">
+        <tr>
+          <th>Name</th>
+          <th>Rollno</th>
+          <th>Company</th>
+          <th>Department</th>
+          <th>Package</th>
+        </tr> 
+        {% for student in studentec %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>{{ student.roll_no }}</td>
+      <td>{{ student.company }}</td>
+      <td>{{ student.dept }}</td>
+      <td>{{ student.pck }}</td>
+    </tr>
+  {% endfor %}
+      </table> 
+
+<br>  
+<h3 style="text-align: center;">Upload Placed Student Details</h3></p><a href="/excelfiles" style="text-decoration:none"><button class="add_fest_btn" style="margin-left: 47%;">upload</button></a><br></div>  
+
+{% comment %} {% endif %} {% endcomment %}
+
+ 
+    </div>
+    {% endblock body %}

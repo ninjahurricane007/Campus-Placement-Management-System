@@ -1,0 +1,242 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/test.css">
+<style>
+  .h1{
+    text-align:center;
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    {% comment %} height: 20px; {% endcomment %}
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    border-radius:10%;
+    {% comment %} height: 20%; {% endcomment %}
+  }
+  
+  .button1:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    margin-left: 20%;
+    border-radius:10%;
+  }
+  
+  .button2:hover {
+    background-color: black;
+    color: white;
+  }
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    margin-left: 20%;
+    border-radius:10%;
+  }
+  
+  .button3:hover {
+    background-color: black;
+    color: white;
+  }
+  </style>
+{% endblock head %}
+{% block body %}
+	<br><br><br>
+	<h1 class="h1">Coding Questions</h1>
+	<br>
+  <div class="container">
+    <h1 style="text-align:center">Python Coding Questions And References</h1>
+    <hr>
+    <p>
+      <div style="margin-left:5%">
+      <br><br>
+      <a href="/coding" style="text-decoration:none"><button class="button button1">C</button></a>
+      <a href="/python" style="text-decoration:none"><button class="button button2">PYTHON</button></a>
+      <a href="/java" style="text-decoration:none"><button class="button button3">JAVA</button></a>
+      <br>
+      <br>
+    </p>
+    <iframe style="margin-left:5%" width="320" height="245" src="https://www.youtube.com/embed/uuhi830wOzs">
+    </iframe>
+    <iframe style="margin-left:20%" width="320" height="245" src="https://www.youtube.com/embed/BCZWQTY9xPE">
+    </iframe>
+    
+      <br><br>
+    <h3>Write a code to reverse a number</h3>
+    <p>
+      <pre>
+        num = 1234
+        reversed_num = 0
+        while num != 0:
+            digit = num % 10
+            reversed_num = reversed_num * 10 + digit
+            num //= 10
+        
+        print("Reversed Number: " + str(reversed_num))
+    </pre>
+    </p>
+    <hr><br>
+    <h3>Write the code to find the Fibonacci series upto the nth term.</h3>
+    <p><pre>
+        nterms = int(input("How many terms? "))
+        n1, n2 = 0, 1
+        count = 0
+        if nterms <= 0:
+           print("Please enter a positive integer")
+        # if there is only one term, return n1
+        elif nterms == 1:
+           print("Fibonacci sequence upto",nterms,":")
+           print(n1)
+        # generate fibonacci sequence
+        else:
+           print("Fibonacci sequence:")
+           while count < nterms:
+               print(n1)
+               nth = n1 + n2
+               # update values
+               n1 = n2
+               n2 = nth
+               count += 1
+        </pre>
+    </p>
+    <hr><br>
+    <h3>Write code to Check if two strings are Anagram or not </h3>
+    <p><pre>
+        str1 = "Race"
+        str2 = "Care"
+        # convert both the strings into lowercase
+        str1 = str1.lower()
+        str2 = str2.lower()
+        # check if length is same
+        if(len(str1) == len(str2)):
+             # sort the strings
+            sorted_str1 = sorted(str1)
+            sorted_str2 = sorted(str2)
+            # if sorted char arrays are same
+            if(sorted_str1 == sorted_str2):
+            print(str1 + " and " + str2 + " are anagram.")
+            else:
+                print(str1 + " and " + str2 + " are not anagram.")
+        else:
+            print(str1 + " and " + str2 + " are not anagram.")
+    </pre>
+    </p>
+    <hr><br>
+    <h3>Write code Check if the given string is Palindrome or not</h3>
+    <p><pre>
+    
+        my_str = 'aIbohPhoBiA'
+  
+        my_str = my_str.casefold()
+   
+        rev_str = reversed(my_str)
+    
+         if list(my_str) == list(rev_str):
+            print("The string is a palindrome.")
+        else:
+            print("The string is not a palindrome.")
+    </pre>
+    </p>
+    <hr><br>
+    <h3>
+    Write code to Calculate frequency of characters in a string</h3>
+    <p><pre>
+        string = input("Please enter the Your Own String = ")
+        chardict = {}
+    
+        for num in string:
+            keys = chardict.keys()
+            if num in keys:
+              chardict[num] += 1
+            else:
+                chardict[num] = 1
+    
+        print(chardict)
+    </pre>
+    </p>
+    <hr><br>
+    <h3>Write a code for bubble sort</h3>
+    <p><pre>
+        def bubbleSort(array):
+     
+        # loop to access each array element
+        for i in range(len(array)):
+    
+            # loop to compare array elements
+            for j in range(0, len(array) - i - 1):
+                if array[j] > array[j + 1]:
+                temp = array[j]
+                array[j] = array[j+1]
+                array[j+1] = temp
+        data = [-2, 45, 0, 11, -9]
+        bubbleSort(data)
+        print('Sorted Array in Ascending Order:')
+        print(data)
+    </pre>
+    </p>
+    <hr><br>
+    <h3>Program to print half pyramid a using numbers</h3>
+    <p><pre>
+    rows = int(input("Enter number of rows: "))
+
+        for i in range(rows):
+         for j in range(i+1):
+          print(j+1, end=" ")
+        print("\n")
+    </pre>
+</p>
+<hr><br>
+<h3>Program to print full Pyramid of Numbers</h3>
+<p><pre>
+     rows = int(input("Enter number of rows: "))
+
+    k = 0
+    count=0
+    count1=0
+
+    for i in range(1, rows+1):
+         for space in range(1, (rows-i)+1):
+             print("  ", end="")
+             count+=1
+    
+        while k!=((2*i)-1):
+            if count<=rows-1:
+             print(i+k, end=" ")
+                count+=1
+        else:
+            count1+=1
+            print(i+k-(2*count1), end=" ")
+        k += 1
+    
+    count1 = count = k = 0
+    print()
+    </pre>
+</p>
+</div>
+</div>
+	
+</body>
+</html>
+{% endblock body %}

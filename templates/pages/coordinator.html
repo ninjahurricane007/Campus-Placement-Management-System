@@ -1,0 +1,189 @@
+{% extends "../pages/base.html" %} {% load static %} {% block title %} ASIET {% endblock title %} {% block head %}
+<link rel="stylesheet" href="/static/coordinator.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> {% endblock head %} {% block body %} <br>
+<br>
+<div class="cordinator_container">
+  <div class="row" align="center" style="overflow-x:auto;padding:0 8px">
+    <div class="column g">
+      <div class="card">
+        <p style="font-size: 20px;">
+          <b>Drives <br>
+            <h2 style="font-size:30px ;">{{count_drive}}</h2>
+          </b>
+        </p>
+      </div>
+    </div>
+    <div class="column b">
+      <div class="card">
+        <p style="font-size: 20px;">
+          <b>Participants <br>
+            <h2 style="font-size:30px ;">{{count_reg}}</h2>
+          </b>
+        </p>
+      </div>
+    </div>
+    <div class="column r">
+      <div class="card">
+        <p style="font-size: 20px;">
+          <b>Placed <br>
+            <h2 style="font-size:30px ;">{{placedcount}}</h2>
+          </b>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="w3-container" align="center">
+    <div class="w3-row" align="center">
+      <a href="javascript:void(0)" onclick="openCity(event, 'fests');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Drives</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'participants');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Participants</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openCity(event, 'placed');">
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Placed</div>
+      </a>
+    </div>
+    {% comment %} <div id="drives" class="w3-container city">
+      <br>
+      <br>
+      <div style="overflow-x:auto;">
+        <table class="tbl" align="center">
+          <a href="/createdrive">
+            <button class="add_fest_btn">Add New Drive</button>
+          </a>
+          <tr>
+            <th>Drive Name</th>
+            <th>Package</th>
+            <th>Last Date</th>
+            <th>Delete</th>
+          </tr> {% for drive in drives %} <tr>
+            <td>{{drive.drive_name}}</td>
+            <td>{{drive.drive_pckg}}</td>
+            <td>{{drive.drive_date}}</td>
+            <td>
+              <a href="/drivedelete/{{drive.id}}">
+                <img src="https://cdn-icons-png.flaticon.com/512/10300/10300637.png" height="20px">
+              </a>
+            </td>
+            <td>
+              <a href="/drivecreate/{{fest.id}}">
+                <button class="add_fest_btn">Edit Drive</button>
+              </a>
+            </td>
+          </tr> {% endfor %}
+        </table>
+      </div>
+    </div> {% endcomment %}
+    <div id="fests" class="w3-container city" style="display:none">
+      <br>
+      <br>
+      <div style="overflow-x:auto;">
+        <table class="tbl" align="center">
+          <a href="/createdrive">
+            <button class="add_fest_btn">Add New Drive</button>
+          </a>
+          <tr>
+            <th>Drive Name</th>
+            <th>Package</th>
+            <th>Last Date</th>
+            <th>Delete</th>
+          </tr> {% for drive in drives %} <tr>
+            <td>{{drive.drive_name}}</td>
+            <td>{{drive.drive_pckg}}</td>
+            <td>{{drive.drive_date}}</td>
+            <td>
+              <a href="/drivedelete/{{drive.id}}">
+                <img src="https://cdn-icons-png.flaticon.com/512/10300/10300637.png" height="20px">
+              </a>
+            </td>
+            <td>
+              <a href="/drivecreate/{{drive.id}}">
+                <button class="add_fest_btn">Edit Drive</button>
+              </a>
+            </td>
+          </tr> {% endfor %}
+        </table>
+      </div>
+    </div>
+
+    <div id="participants" class="w3-container city" style="display:none">
+    <br>
+    <br>
+    <div class="sorting_participant">
+      <form action="?action=filter_drives" method="POST"> {% csrf_token %} <select id="drives" name="drive"> {% for drive in drives %} <option value={{drive.id}} {% if reg1.drive.id == drive.id %} selected {% else %} "" {% endif %}>{{drive.drive_name}}</option> {% endfor %} </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="tbl" align="center">
+        <tr>
+          <th>Participant Name</th>
+          <th>Email Id</th>
+          <th>Phone</th>
+          <th>Class</th>
+          <th>Drive Name</th>
+          <th>Delete</th>
+        </tr> {% for reg in regis %} <tr>
+          <td>{{reg.user.username}}</td>
+          <td>{{reg.user.email}}</td>
+          <td>9734285623</td>
+          <td>S6 CSA</td>
+          <td>{{reg.drive.drive_name}}</td>
+          <td>
+            <a href="#">
+              <img src="https://cdn-icons-png.flaticon.com/512/10300/10300637.png" height="20px">
+            </a>
+          </td>
+        </tr> {% endfor %}
+      </table>
+    </div>
+    </div>
+    <div id="placed" class="w3-container city" >
+      <br>
+      <br>
+      <div>
+        <table class="tbl" align="center">
+          <tr>
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>Company</th>
+            <th>Department</th>
+            <th>Package</th>
+          </tr> 
+          {% for student in Placedstudent %}
+      <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.roll_no }}</td>
+        <td>{{ student.company }}</td>
+        <td>{{ student.dept }}</td>
+        <td>{{ student.pck }}</td>
+      </tr>
+    {% endfor %}
+        </table> 
+      </div>
+    </div> 
+    <br/>
+    <br/>
+  </div>
+</div>
+
+{% endblock body %} 
+{% block js %} <script>
+  function openCity(evt, cityName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-border-black", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-border-black";
+  }
+</script> {% endblock js %} {% load static %}

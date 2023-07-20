@@ -1,0 +1,57 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/fests.css">
+{% endblock head %}
+{% block body %}
+<div class="fests_container">
+    <h1 class="card__header fest__header">Your Journey Begins Here...</h1>
+    <br><hr><br><br><br><br>
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="https://media-fastly.hackerearth.com/media/hackathon/oneplus-sw-developer-campus-hiring-2019-nit-jamshedpur/images/0d859cf4db-W_bannerhigh_res.png" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">On Campus Drives</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Unlock your potential on campus: Join the drive to success!</p>
+                    <a href="/drives" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="https://www.freshersvoice.com/wp-content/uploads/2022/10/Infosys-Off-Campus-Banner.png?ezimgfmt=rs:396x150/rscb1/ngcb1/notWebP" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">Off Campus Drives</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Expand your horizons beyond campus: Checkout the off campus drives here!</p>
+                    <a href="/offc" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid__item">
+            <div class="card">
+                <img class="card__img" src="https://www.shutterstock.com/image-vector/colorful-horizontal-banner-hands-typing-260nw-1104875084.jpg" alt={{ fest.fest_name }}>
+                <div class="card__content">
+                    <!--<h3>&nbsp;{{fest.fest_date}}</h3><br>-->
+                    <h1 class="card__header">Learning Resources</h1>
+                    <!--<h3>&nbsp;{{ fest.fest_venue }}</h3><br>-->
+                    <p class="card__text">Unlock your potential with our learning resources: Empowering you to succeed!</p>
+                    <a href="/learn" style="text-decoration:none"><button class="card__btn">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="footer-text">© 2023 Campus Recruitment System. All rights reserved</p>
+</div>
+{% endblock body %}

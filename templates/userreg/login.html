@@ -1,0 +1,27 @@
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/login.css">
+{% endblock head %}
+{% block body %}
+<div class="contents">
+    <form class="login" method='POST'>
+        {% csrf_token %}
+        <img src="https://cdn-icons-png.flaticon.com/512/428/428576.png?w=740&t=st=1676482927~exp=1676483527~hmac=d8156e69b26e26b71e43c569b0ea007aaf26039188569162ced851d49e006f6f"><br>
+        <input class="txt" type="text" placeholder="Username/Email" name="username" required=true>
+        <input class="txt" type="password" placeholder="Password" name="password" required=true>
+        <h3><a href="{% url 'forgot_password' %}"><u>forgot password?</u></a></h3>
+        <button>Login</button>
+        <h3 style="margin-top:10px">Don't have an account?&nbsp<a href="/signup"><u>Sign Up</u></a></h3>
+        <div class="form-group">
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert" style="margin-bottom: 0px;">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+{% endblock body %}
+

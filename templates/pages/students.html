@@ -1,0 +1,108 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block head %}
+{% comment %} <link rel="stylesheet" href="/static/students.css"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
+{% comment %} <meta name="viewport" content="width=device-width, initial-scale=1"> {% endcomment %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.button
+{
+  background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 20%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 25px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 300px;
+}
+</style>
+{% endblock head %}
+{% block body %}
+<div class="fests_container">
+    <h1 class="card__header fest__header">Student Data</h1>
+    <br><hr><br><br><br><br>
+    <div class="row">
+      <div class="column" style="margin-left:22%">
+        {% comment %} <div class="cards"> {% endcomment %}
+          <div class="cards">
+            <img src="https://cdn1.vectorstock.com/i/1000x1000/96/25/female-graduate-student-icon-vector-21679625.jpg" alt="John" style="width:100%">
+            <br>
+            <h1 style="font-size:25px">Student data</h1><br>
+            <br>
+            <p><a href="/cs"><button class="button" style=>View</button></a></p>
+          </div>
+        {% comment %} </div> {% endcomment %}
+      </div>
+    
+      <div class="column" style="margin-left:15%">
+        {% comment %} <div class="cards"> {% endcomment %}
+          <div class="cards">
+            <img src="https://e7.pngegg.com/pngimages/699/906/png-clipart-electronic-engineering-electronics-electrical-engineering-electronic-circuit-technology-angle-electronics.png" alt="John" style="width:100%">
+            <h1 style="font-size:25px">Placement details</h1><br>
+            <p><a href="/ec"><button class="button">View</button></a></p>
+          </div>
+        {% comment %} </div> {% endcomment %}
+      </div>
+      
+     
+     
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+    
+</div>
+</body>
+</html>
+{% endblock body %}

@@ -1,0 +1,52 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="/static/drives.css">
+<link rel="stylesheet" href="/static/coordinator.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock head %}
+{% block body %}
+<div class="drives_main_container">
+  <span><h2>On Campus Drives</h2></span>
+  <div class="drive_flex_wrapper">
+    <div class="drives_container">
+      <div class="drive_item">
+        {% comment %} <div class="drive_img"><img src="/media/images/{{drive.drive_img}}" alt=""></div> {% endcomment %}
+        <div class="drive_contents">
+          <div class="drive_name">Arithmetic questions</div>
+          {% comment %} <div class="drive_desc">{{drive.drive_role}}</div> {% endcomment %}
+          {% comment %} <div class="drive_price">{{drive.drive_pckg}}</div> {% endcomment %}
+          <div class="reg_button"><a href="/arithmetic" style="text-decoration:none"><button>Attend &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+          </div>
+          </div></div></div></div>
+		  <div class="drive_flex_wrapper">
+			<div class="drives_container">
+			  <div class="drive_item">
+		  <div class="drive_contents">
+			<div class="drive_name">Reasoning questions</div>
+			{% comment %} <div class="drive_desc">{{drive.drive_role}}</div> {% endcomment %}
+			{% comment %} <div class="drive_price">{{drive.drive_pckg}}</div> {% endcomment %}
+			<div class="reg_button"><a href="/reasoning" style="text-decoration:none"><button>Attend &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+			</div>
+			</div></div></div></div>
+			<div class="drive_flex_wrapper">
+				<div class="drives_container">
+				  <div class="drive_item">
+			<div class="drive_contents">
+				<div class="drive_name">Programming questions</div>
+				{% comment %} <div class="drive_desc">{{drive.drive_role}}</div> {% endcomment %}
+				{% comment %} <div class="drive_price">{{drive.drive_pckg}}</div> {% endcomment %}
+				<div class="reg_button"><a href="/cquiz" style="text-decoration:none"><button>Attend &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+				</div>
+				</div>
+      </div>
+      {% comment %} {% endfor %} {% endcomment %}
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+{% endblock body %}
+

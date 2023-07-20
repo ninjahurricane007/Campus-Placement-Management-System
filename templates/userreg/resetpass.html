@@ -1,0 +1,28 @@
+<!-- forgot_password.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Reset Password</h2>
+<p>Enter your email address and we'll send you a link to reset your password.</p>
+
+<form method="POST" enctype="multipart/form-data" action="/reset_password/">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="newpass">New Password</label>
+        <input type="password" class="form-control" id="newpass" name="newpass" required>
+        <label for="conpass">Confirm Password</label>
+        <input type="password" class="form-control" id="conpass" name="conpass" required>
+    </div>
+    <input type="hidden" name="uidb64" value="{{ uidb64 }}">
+    <input type="hidden" name="token" value="{{ token }}">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert" style="margin-bottom: 0px;">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+</form>
+
+{% endblock %}

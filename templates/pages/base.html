@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="/static/base.css">
+    {% block head %}{% endblock head %}
+</head>
+<body style="background-color:#f5f5f5">
+    <div class="navbar">
+        <nav style="background-color:#fff;line-height:0">
+            <div class="left_content">
+                <i class="fas fa-bars menu-bar" data-visible="true" onclick="handleSidebar()" style="margin-right:15px"></i>
+                <img src="https://cdn-icons-png.flaticon.com/512/438/438013.png?w=740&t=st=1676395382~exp=1676395982~hmac=8a2e9ed73d0205f73034c90ab2ccd1139c3bf3cbc4880c9d7cfe797707cf8d63" alt="">
+                <h1 class="navbar-logo"><a href="/fests">ASIET</a></h1>
+            </div>
+            <ul class="nav_links">
+                {% if user.is_authenticated %}
+                Welcome, {{ user.username }}
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/signup">Signup</a>
+                    </li>
+                {% endif %}
+            </ul> 
+        </nav>
+        {% comment %} <div class="info-message">
+            <p>The message</p>
+        </div> {% endcomment %}
+    </div>
+    
+      <div class="all_container">
+        <div class="sidebar" data-visible="false">
+            <div class="sidebar-content">
+                <a href="/home" onclick="handleSidebar()" class="side-menu festclass">
+                    <div class="side-menu-item">
+                        <i class="fas fa-home"></i>
+                        <p>Home</p>
+                    </div>
+                </a>
+                {% if user.is_authenticated %}
+                <a href="/getyourdrives" onclick="handleSidebar()" class="side-menu regdriveclass">
+                  <div class="side-menu-item">
+                    <i class="far fa-calendar-check"></i>
+                    <p>Registered Drives</p>
+                  </div>
+                </a>
+                {% endif %}
+                {% if user.profile.isCordinator %}
+                <a href="/cordinator" onclick="handleSidebar()" class="side-menu cordclass">
+                    <div class="side-menu-item">
+                        <i class="fas fa-users-cog"></i>
+                      <p>Cordinator Panel</p>
+                    </div>
+                </a>
+                <a href="/students" onclick="handleSidebar()" class="side-menu cordclass">
+                    <div class="side-menu-item">
+                        <i class="fa fa-users"></i>
+                      <p>Students Data</p>
+                    </div>
+                </a>
+                {% endif %}
+                <a href="/profile" onclick="handleSidebar()" class="side-menu profileclass">
+                    <div class="side-menu-item">
+                      <i class="far fa-calendar-check"></i>
+                      <p>Profile</p>
+                    </div>
+                </a>
+              </div>
+          </div>
+        <div class="content_container">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/bfc635748c.js" crossorigin="anonymous"></script>
+    {% block js %}{% endblock js %}
+    <script>
+        
+        fest=document.querySelector(".festclass")
+        regeve=document.querySelector(".regdriveclass")
+        profile=document.querySelector(".profileclass")
+        cord=document.querySelector(".cordclass")
+        if(window.location.pathname.includes("/fests")){
+            fest.setAttribute('id','selected-sidemenu');
+        }
+        else if(window.location.pathname.includes("/getyourdrives")){
+            regeve.setAttribute('id','selected-sidemenu');
+        }
+        else if(window.location.pathname.includes("/profile")){
+            profile.setAttribute('id','selected-sidemenu');
+        }
+        else if(window.location.pathname.includes("/cordinator")){
+            cord.setAttribute('id','selected-sidemenu');
+        }
+        const handleSidebar = () => {
+          console.log("heeee");
+            const sidebar = document.querySelector(".sidebar");
+            const visibility = sidebar.getAttribute('data-visible');
+            if (visibility === "false") {
+                sidebar.setAttribute("data-visible", true);
+            }
+            else if (visibility === "true") {
+                sidebar.setAttribute("data-visible", false);
+            }
+        }
+      </script>
+</body>
+</html>

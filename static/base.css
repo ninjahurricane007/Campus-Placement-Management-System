@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+.info-message{
+    margin-left: 15em;
+    position:absolute;
+    top:54px;
+    width: 100%;
+    color: #084298;
+    background-color: #cfe2ff;
+    padding: 18px 5px;
+}
+.info-message p{
+    margin-left: 20px;
+}
+.navbar nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 2%;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+}
+nav .left_content{
+    display: flex;
+    align-items: center;
+}
+.left_content img{
+    width: 30px;
+    margin-right: 8px;
+}
+.left_content h1 a{
+    font-size: 1.3rem;
+}
+nav .left_content .menu-bar{
+    display: none;
+    margin-right: 20px;
+}
+.navbar-logo a{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 25px;
+}
+.nav_links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav_links li{
+    list-style: none;
+}
+.nav_links li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+/* The sidebar */
+
+.content_container{
+    margin-left: 15em;
+}
+.sidebar{
+    margin-top: 52px;
+    display:flex;
+    position: fixed;
+    top: 10;
+    background-color: #222d30;
+    height: 100%;
+    width: 15rem;
+    justify-content: center;
+    z-index: 8;
+    box-shadow: 0 1px 7px rgb(0 0 0 / 5%);
+    color: #fff;
+}
+.sidebar-content {
+    user-select: none;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content .sub-menu{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-content .sub-menu a{
+    font-weight: unset;
+    color: #fff;
+    display: inline;
+    
+}
+.sidebar-content .sub-menu .side-menu p{
+    margin-left: 60px;
+    display: inline;
+    font-size: 0.92rem;
+}
+.sidebar-content .side-menu .side-menu-item{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.sidebar-content .side-menu .side-menu-item p{
+    margin-bottom: 0;
+}
+.sidebar-content .side-menu{
+    margin-bottom: 15px;
+    color: rgb(217, 217, 217);
+    text-decoration: none;
+    /* font-weight: bold; */
+    padding: 8px;
+    /* justify-content: center; */
+}
+.sidebar-content .side-menu  p{
+    margin-left: 10px;
+}
+#selected-sidemenu{
+    background-color: #2f3b3d;
+    font-weight: bold;
+    border-right: 3px solid #FBB566;
+}
+
+/* will only active if data-visible attribute of sidebar is true ...is set to true using javascript*/
+.sidebar[data-visible="true"]{
+    transform: translateX(0%);
+}
+
+@media(max-width:850px){
+    nav .left_content .menu-bar{
+        display: block;
+    }
+    .content_container{
+        margin-left: 0;
+    }
+    .info-message{
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .sidebar{
+        transform: translateX(-100%);
+        transition: transform 350ms ease-out;
+    }
+}

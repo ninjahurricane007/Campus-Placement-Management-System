@@ -1,0 +1,61 @@
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #e2e8f0;
+/* 
+  background: rgb(10, 1, 16);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(6, 16, 19) 50%, rgb(2, 5, 7) 100%); */
+}
+
+.offp{
+padding-left: 100px;
+padding-right: 100px;
+}
+
+h4{
+
+
+  text-align: center;
+  color: rgb(5, 1, 1);
+
+  border: solid 1px #555;
+  border-radius: 15px;
+  margin: 10px 40px;
+  background-color: rgb(239, 240, 238);
+  /* box-shadow: 12px 0 15px -4px rgba(15, 25, 37, 0.8), -12px 0 8px -4px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 12px 0 15px -4px rgba(21, 29, 40, 0.8), -12px 0 8px -4px rgba(18, 21, 24, 0.8);
+  -webkit-box-shadow: 12px 0 15px -4px rgba(31, 119, 227, 0.8), -12px 0 8px -4px rgba(68, 150, 232, 0.8);
+  -o-box-shadow: 12px 0 15px -4px rgba(36, 122, 235, 0.8), -12px 0 8px -4px rgba(71, 115, 205, 0.8); */
+}
+h2{
+  text-align: center ;
+  color: white;
+  font-size: 1.3rem;
+
+}
+h1{ 
+  text-align: center;
+  color: rgb(29, 11, 11);
+
+  border: solid 1px #555;
+  border-radius: 15px;
+  margin: 10px 40px;
+  background-color: rgb(243, 246, 241);
+  /* box-shadow: 12px 0 15px -4px rgba(17, 29, 43, 0.8), -12px 0 8px -4px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 12px 0 15px -4px rgba(15, 24, 37, 0.8), -12px 0 8px -4px rgba(18, 21, 24, 0.8);
+  -webkit-box-shadow: 12px 0 15px -4px rgba(31, 119, 227, 0.8), -12px 0 8px -4px rgba(68, 150, 232, 0.8);
+  -o-box-shadow: 12px 0 15px -4px rgba(36, 122, 235, 0.8), -12px 0 8px -4px rgba(71, 115, 205, 0.8); */
+
+}
+p { 
+  text-decoration: wavy;
+}
+
+a { 
+  text-decoration: none;
+}
+
+h3{
+  text-align: center;
+}

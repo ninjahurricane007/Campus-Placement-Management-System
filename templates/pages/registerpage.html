@@ -1,0 +1,39 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+ASIET
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/registerpage.css">
+{% endblock head %}
+{% block body %}
+<div class="regpage_main_container">
+   {% comment %} <p>{{drive.drive_name}}</p>
+   <p>{{drive.drive_desc}}</p>
+   <p>{{drive.drive_tags}}</p>
+   <img src="/media/images/{{drive.drive_img}}" alt="ss"> {% endcomment %}
+   <h1>{{drive.drive_name}}</h1>
+   <div class="drive_desc">
+        <div class="drive_img">
+            <img src="/media/images/{{drive.drive_img}}" alt="">
+        </div>
+        <div class="drive_rhs">
+            <div class="drive_details">
+                <span class="teamsize">Role: {{drive.drive_role}}</span>
+                <span class="prizepool">Package: {{drive.drive_pckg}}<br></span>
+                <span class="prizepool">Minimum CGPA: {{drive.drive_cgpa}}<br></span>
+                <span class="prizepool">Permissible Backlogs: {{drive.drive_bklgs}}<br></span>
+                <span class="prizepool">Last Date: {{drive.drive_date}}<br></span>
+                <span>{{drive.drive_desc}}</span>
+            <a href="/checkout/{{drive.id}}" style="text-decoration:none" class="register_btn"><button>Register</button></a><br>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+   </div>
+</div>
+{% endblock body %}

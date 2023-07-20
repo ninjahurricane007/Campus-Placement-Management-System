@@ -1,0 +1,24 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="/static/createfest.css">
+{% endblock head %}
+{% block body %}
+<div class="contents">
+    <p>
+        <form method="POST" enctype="multipart/form-data" action="/drivecreate/">
+            {% csrf_token %}
+            <img src="https://cdn-icons-png.flaticon.com/512/1256/1256641.png?w=740&t=st=1679032275~exp=1679032875~hmac=12a304b189aed44826e829cb105e1119b88193893cd29526895b7762d2cafd95"><br>
+            <input id="fname" class="txt" type="text" placeholder="Company Name" name="dname" required=true><br>
+            <input class="txt" type="text" placeholder="Job Role" name="drole" required=true><br>
+            <textarea rows="5" cols="50" name="mydes" placeholder="Drive Details" required=true></textarea>
+            <input class="txt" type="text" placeholder="Salary Package" name="dpckg" required=true><br>
+            <input class="txt" type="date" placeholder="Last Date to Apply" name="ddate" required=true><br>
+            <input class="txt" type="text" placeholder="Permissible Backlogs" name="dbklgs" required=true><br>
+            <input class="txt" type="text" placeholder="Required CGPA" name="dcgpa" required=true><br>
+            <h3>Upload Company Logo</h3><input type="file" accept="image/*" name="dimg"><br>
+            <button type="submit">Create Drive</button><br>
+        </form>
+    </p>
+</div>
+{% endblock body %}

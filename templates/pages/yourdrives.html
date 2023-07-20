@@ -1,0 +1,35 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+IEvent|Registered Drives
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/yourdrives.css">
+{% endblock head %}
+{% block body %}
+<br><br><br>
+<div class="regdrives_main_container">
+    <div class="regdrives_container">
+        
+        {% for eve in reg %}
+        <div class="card">
+            <div class="container">
+                <div class="detail">
+                    <h4><b>{{eve.drive.drive_name}}</b></h4>
+                    <p>{{eve.drive.drive_role}}</p>
+                </div>
+                
+                <a href="/unregister/{{eve.id}}"><button class="btn">Unregister</button></a>
+            </div>
+        </div>
+        {% endfor %}
+        {% if messages %}
+        <ul class="messages" style="margin-left: 75px;">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+</div>
+{% endblock body %}

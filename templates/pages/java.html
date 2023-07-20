@@ -1,0 +1,313 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/test.css">
+<style>
+  .h1{
+    text-align:center
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    {% comment %} height: 20px; {% endcomment %}
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    border-radius:10%;
+  }
+  
+  .button1:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    margin-left: 20%;
+    border-radius:10%;
+  }
+  
+  .button2:hover {
+    background-color: black;
+    color: white;
+  }
+
+  
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    border-radius:10%;
+    margin-left:20%;
+  }
+  
+  .button3:hover {
+    background-color: black;
+    color: white;
+  }
+  </style>
+{% endblock head %}
+{% block body %}
+	<br><br><br>
+	<h1 class="h1">Coding Questions</h1>
+	<br>
+  <div class="container">
+    <h1 style="text-align:center">Java Coding Questions And References</h1>
+    <hr>
+    <p>
+      <div style="margin-left:5%">
+      <br><br>
+      <a href="/coding" style="text-decoration:none"><button class="button button1">C</button></a>
+      <a href="/python" style="text-decoration:none"><button class="button button2">PYTHON</button></a>
+      <a href="/java" style="text-decoration:none"><button class="button button3">JAVA</button></a>
+      <br>
+      <br>
+    </p>
+    <iframe style="margin-left:5%" width="320" height="245" src="https://www.youtube.com/embed/PwiuAebCruY">
+    </iframe>
+    <iframe style="margin-left:20%" width="320" height="245" src="https://www.youtube.com/embed/vuJf0jBGAtY">
+    </iframe>
+    
+      <br><br>
+    <h3>Write a code to reverse a number</h3>
+    <p>
+      <pre>
+        class Main {
+          public static void main(String[] args) {
+            int num = 1234, reversed = 0;
+            System.out.println("Original Number: " + num);
+            // run loop until num becomes 0
+            while(num != 0) {
+            
+              int digit = num % 10;
+              reversed = reversed * 10 + digit;
+              num /= 10;
+            }
+        
+            System.out.println("Reversed Number: " + reversed);
+          }
+        }
+    </pre>
+    </p>
+    <hr><br>
+    <h3>Write the code to find the Fibonacci series upto the nth term.</h3>
+    <p><pre>
+      // Fibonacci Series using Recursion
+      class Fibonacci {
+        static int fib(int n)
+        {
+          if (n==0||n==1)
+            return 0;
+        else if(n==2)
+            return 1;
+          return fib(n - 1) + fib(n - 2);
+        }
+      
+        public static void main(String args[])
+        {
+          int n = 9;
+          System.out.println(fib(n));
+        }
+      }      
+        </pre>
+</p>
+<hr><br>
+<h3>Write code to Check if two strings are Anagram or not </h3>
+<p><pre>
+  import java.util.Arrays;
+
+  class Main {
+    public static void main(String[] args) {
+      String str1 = "Race";
+      String str2 = "Care";
+      
+      str1 = str1.toLowerCase();
+      str2 = str2.toLowerCase();
+  
+      // check if length is same
+      if(str1.length() == str2.length()) {
+  
+        // convert strings to char array
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+  
+        // sort the char array
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+  
+        // if sorted char arrays are same
+        // then the string is anagram
+        boolean result = Arrays.equals(charArray1, charArray2);
+  
+        if(result) {
+          System.out.println(str1 + " and " + str2 + " are anagram.");
+        }
+        else {
+          System.out.println(str1 + " and " + str2 + " are not anagram.");
+        }
+      }
+      else {
+        System.out.println(str1 + " and " + str2 + " are not anagram.");
+      }
+    }
+  }
+  </pre>
+</p>
+<hr><br>
+<h3>Write code Check if the given string is Palindrome or not</h3>
+<p><pre>
+  class Main {
+    public static void main(String[] args) {
+  
+      String str = "Radar", reverseStr = "";
+      
+      int strLength = str.length();
+  
+      for (int i = (strLength - 1); i >=0; --i) {
+        reverseStr = reverseStr + str.charAt(i);
+      }
+  
+      if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
+        System.out.println(str + " is a Palindrome String.");
+      }
+      else {
+        System.out.println(str + " is not a Palindrome String.");
+      }
+    }
+  }
+  </pre>
+</p>
+<hr><br>
+<h3>
+  Write code to Calculate frequency of characters in a string</h3>
+<p><pre>
+  public class Frequency {
+
+    public static void main(String[] args) {
+        String str = "This website is awesome.";
+        char ch = 'e';
+        int frequency = 0;
+
+        for(int i = 0; i < str.length(); i++) {
+            if(ch == str.charAt(i)) {
+                ++frequency;
+            }
+        }
+
+        System.out.println("Frequency of " + ch + " = " + frequency);
+    }
+}
+  </pre>
+</p>
+<hr><br>
+<h3>Write a code for bubble sort</h3>
+<p><pre>
+  class BubbleSort
+  {
+    void bubbleSort(int arr[])
+    {
+      int n = arr.length;
+      for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+          if (arr[j] > arr[j+1])
+          {
+            // swap temp and arr[i]
+            int temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+    }
+  
+    /* Prints the array */
+    void printArray(int arr[])
+    {
+      int n = arr.length;
+      for (int i=0; i< n; ++i)
+        System.out.print(arr[i] + " ");
+      System.out.println();
+    }
+
+    public static void main(String args[])
+    {
+      BubbleSort ob = new BubbleSort();
+      int arr[] = {64, 34, 25, 12, 22, 11, 90};
+      ob.bubbleSort(arr);
+      System.out.println("Sorted array");
+      ob.printArray(arr);
+    }
+  }  
+    </pre>
+</p>
+<hr><br>
+<h3>Program to print half pyramid a using numbers</h3>
+<p><pre>
+  public class Main {
+
+    public static void main(String[] args) {
+      int rows = 5;
+  
+      for (int i = 1; i <= rows; ++i) {
+        for (int j = 1; j <= i; ++j) {
+          System.out.print(j + " ");
+        }
+        System.out.println();
+      }
+    }
+  }
+    </pre>
+</p>
+<hr><br>
+<h3>Program to print pyramid using numbers</h3>
+<p><pre>
+  public class Main {
+
+    public static void main(String[] args) {
+      int rows = 5, k = 0, count = 0, count1 = 0;
+  
+      for (int i = 1; i <= rows; ++i) {
+        for (int space = 1; space <= rows - i; ++space) {
+          System.out.print("  ");
+          ++count;
+        }
+  
+        while (k != 2 * i - 1) {
+          if (count <= rows - 1) {
+            System.out.print((i + k) + " ");
+            ++count;
+          } else {
+            ++count1;
+            System.out.print((i + k - 2 * count1) + " ");
+          }
+  
+          ++k;
+        }
+        count1 = count = k = 0;
+  
+        System.out.println();
+      }
+    }
+  }
+    </pre>
+</p>
+</div>
+</div>
+	
+</body>
+</html>
+{% endblock body %}

@@ -1,0 +1,103 @@
+.drives_main_container{
+  min-height:140vh;
+  padding-top: 75px;
+  padding-left: 25px;
+}
+.footer-text{
+  text-align: center;
+  color: rgb(100, 100, 100);
+  margin-bottom: 30px;
+}
+.drives_main_container img{
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    object-position: center;
+}
+.drives_main_container span{
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  margin-top: 30px;
+}
+.drive_flex_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.drives_container{
+    margin-top: 50px;
+    width: 70rem;
+    display: grid;
+    /* align-content: center; */
+    /* gap: 2.5rem; */
+    grid-template-columns: repeat(auto-fit,minmax(19rem, 1fr));
+}
+.drives_container .drive_item{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 8px;
+  margin: 10px 20px;
+  background-color: #fff;
+  transition: 0.2s;
+}
+.drives_container .drive_item:hover{
+  transform: translateY(-0.5%);
+}
+.drives_container .drive_item .drive_contents{
+  padding: 20px;
+}
+.drives_container .drive_item .drive_contents .reg_button{
+  margin-top: 17px;
+}
+.drives_container .drive_item .drive_contents .reg_button button{
+    display: block;
+    width: 100%;
+    padding: 7px 5px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #F03737;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 80ms ease-in;
+}
+.drives_container .drive_item .drive_contents .reg_button button:active{
+  transform: scale(0.95);
+}
+.drive_contents .drive_name{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+}
+.drive_contents .drive_price{
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+.drive_item .drive_img img{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+@media(max-width:1000px){
+  .drives_container{
+    width: 100%;
+  }
+}
+
+.vl {
+  border-left: 1px solid gray;
+  height: 1000px;
+  position: absolute;
+  left: 75%;
+  margin-left: -3px;
+  top: 0;
+}
+
+p{
+  left: 80%;
+  top: 0;
+}
